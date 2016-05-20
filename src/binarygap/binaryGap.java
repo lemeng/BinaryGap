@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class binaryGap {
 
 	public static void main(String[] args) throws IOException{
-		// TODO Auto-generated method stub
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Enter an integer:");
 		int i = 0;
@@ -26,42 +26,37 @@ public class binaryGap {
 		int count = 0;
 		ArrayList<Integer> gap = new ArrayList<Integer>();
 		
-	//	if (N >= 1 && N <= Integer.MAX_VALUE) {
-			String binaryString = Integer.toBinaryString(N);
-			System.out.println(binaryString);
-			for (int i=0; i<(binaryString.length()-1);i++) {
+		String binaryString = Integer.toBinaryString(N);
+		System.out.println(binaryString);
+		for (int i=0; i<(binaryString.length()-1);i++) {
 				
-				if ((Character.getNumericValue(binaryString.charAt(i)) == 1) && 
+			if ((Character.getNumericValue(binaryString.charAt(i)) == 1) && 
 						(Character.getNumericValue(binaryString.charAt(i+1)) == 0)) {
 					
 					count++;
 					
-				}
-				else if ((Character.getNumericValue(binaryString.charAt(i)) == 0) && 
+			}
+			else if ((Character.getNumericValue(binaryString.charAt(i)) == 0) && 
 						(Character.getNumericValue(binaryString.charAt(i+1)) == 0)) {
 					
 					count++;
 		
-				}
-				else if ((Character.getNumericValue(binaryString.charAt(i)) == 0) && 
+			}
+			else if ((Character.getNumericValue(binaryString.charAt(i)) == 0) && 
 						(Character.getNumericValue(binaryString.charAt(i+1)) == 1)) {
 					
 					gap.add(count);
 					
 					count = 0;
-				}
-					
-						
 			}
+									
+		}
 			
-			int biggestGap = 0;
-			if (!gap.isEmpty())
-				biggestGap = Collections.max(gap);
-			//System.out.print(biggestGap);
-			return biggestGap;
-	//	}
-		
-		
+		int biggestGap = 0;
+		if (!gap.isEmpty())
+			biggestGap = Collections.max(gap);
+			
+		return biggestGap;
 	}
 
 }
